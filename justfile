@@ -59,5 +59,5 @@ validate:
     cargo clippy --all-targets -- -D warnings
     cargo test
 
-shell:
-    limactl shell "{{ vm }}"
+shell *command:
+    limactl shell "{{ vm }}" {{ command }}
