@@ -48,7 +48,10 @@ upgrade:
     limactl shell "{{ vm }}" sudo apt-get update
     limactl shell "{{ vm }}" sudo apt-get upgrade
     limactl shell "{{ vm }}" bash -lc 'brew update && brew upgrade --yes'
-    limactl shell "{{ vm }}" bash -lc 'curl -fsSL https://chatgpt.com/codex/install.sh | sh'
+    limactl shell "{{ vm }}" bash -lc 'curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh'
+    # stop the old running app-server and start it again using the newly installed binary.
+    limactl shell "{{ vm }}" bash -lc \
+        'pkill -x codex || true; exec codex app-server daemon bootstrap'
 
 rebuild: delete create
 
