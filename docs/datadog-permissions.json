@@ -1,11 +1,47 @@
 {
   "permissions": [
     {
+      "id": "12efc20e-d36c-11eb-a9b8-da7ad0900002",
+      "name": "incident_read",
+      "display_name": "Incidents Read",
+      "description": "View incidents in Datadog.",
+      "group_name": "Case and Incident Management",
+      "name_aliases": [],
+      "restricted": true
+    },
+    {
+      "id": "12efc20f-d36c-11eb-a9b8-da7ad0900002",
+      "name": "incident_settings_read",
+      "display_name": "Incident Settings Read",
+      "description": "View Incident Settings.",
+      "group_name": "Case and Incident Management",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
       "id": "1af86ce4-7823-11ea-93dc-d7cad1b1c6cb",
       "name": "logs_read_data",
       "display_name": "Logs Read Data",
       "description": "Read log data. In order to read log data, a user must have both this permission and Logs Read Index Data. This permission can be restricted with restriction queries. Restrictions are limited to the Log Management product.",
       "group_name": "Log Management",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
+      "id": "1b572396-ba15-11ee-9e19-da7ad0900002",
+      "name": "integrations_read",
+      "display_name": "Integrations Read",
+      "description": "View integrations and their configurations.",
+      "group_name": "Integrations",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
+      "id": "1c23f168-da90-11ef-910a-da7ad0900002",
+      "name": "on_call_read",
+      "display_name": "On-Call Read",
+      "description": "View On-Call teams, schedules, escalation policies and overrides.",
+      "group_name": "On-Call",
       "name_aliases": [],
       "restricted": false
     },
@@ -28,6 +64,15 @@
       "restricted": true
     },
     {
+      "id": "4dc3eec6-b468-11ed-8539-da7ad0900002",
+      "name": "incident_notification_settings_read",
+      "display_name": "Incident Notification Settings Read",
+      "description": "View Incidents Notification settings.",
+      "group_name": "Case and Incident Management",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
       "id": "5e605652-dd12-11e8-9e53-375565b8970e",
       "name": "logs_read_index_data",
       "display_name": "Logs Read Index Data",
@@ -46,11 +91,38 @@
       "restricted": false
     },
     {
+      "id": "8da487f0-d2af-11ef-91c8-da7ad0900002",
+      "name": "logs_read_config",
+      "display_name": "Logs Configuration Read",
+      "description": "Read logs configuration.",
+      "group_name": "Log Management",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
+      "id": "b6bf9ac6-9a59-11ec-8480-da7ad0900002",
+      "name": "notebooks_read",
+      "display_name": "Notebooks Read",
+      "description": "View notebooks.",
+      "group_name": "Notebooks",
+      "name_aliases": [],
+      "restricted": true
+    },
+    {
       "id": "d90f6830-d3d8-11e9-a77a-b3404e5e9ee2",
       "name": "dashboards_read",
       "display_name": "Dashboards Read",
       "description": "View dashboards.",
       "group_name": "Dashboards",
+      "name_aliases": [],
+      "restricted": true
+    },
+    {
+      "id": "f8e941cf-e746-11ec-b22d-da7ad0900002",
+      "name": "slos_read",
+      "display_name": "SLOs Read",
+      "description": "View SLOs and status corrections.",
+      "group_name": "Service Level Objectives",
       "name_aliases": [],
       "restricted": true
     }
