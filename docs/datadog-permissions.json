@@ -46,6 +46,15 @@
       "restricted": false
     },
     {
+      "id": "3c4eb438-2693-11f0-8a2e-da7ad0900002",
+      "name": "sheets_read",
+      "display_name": "Sheets Read",
+      "description": "View Sheets.",
+      "group_name": "Sheets",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
       "id": "417ba636-2dce-11eb-84c0-6bce5b0d9de0",
       "name": "apm_read",
       "display_name": "APM Read",
@@ -91,6 +100,15 @@
       "restricted": false
     },
     {
+      "id": "7314eb20-aa58-11ea-95e2-6fb6e4a451d5",
+      "name": "security_monitoring_rules_read",
+      "display_name": "Security Rules Read",
+      "description": "Read Detection Rules.",
+      "group_name": "Cloud Security Platform",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
       "id": "8da487f0-d2af-11ef-91c8-da7ad0900002",
       "name": "logs_read_config",
       "display_name": "Logs Configuration Read",
@@ -116,6 +134,15 @@
       "group_name": "Dashboards",
       "name_aliases": [],
       "restricted": true
+    },
+    {
+      "id": "f5f4ec44-0197-11ef-be23-da7ad0900002",
+      "name": "gcp_configuration_read",
+      "display_name": "GCP Configuration Read",
+      "description": "View but not add, remove, or edit GCP integration configurations.",
+      "group_name": "Integrations",
+      "name_aliases": [],
+      "restricted": false
     },
     {
       "id": "f8e941cf-e746-11ec-b22d-da7ad0900002",
