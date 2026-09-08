@@ -29,10 +29,13 @@ delete: stop
 delete-file path:
     limactl shell "{{ vm }}" bash -lc 'rm -f "{{ path }}"'
 
-login: login-codex login-datadog login-fastly
+login: login-codex login-claude login-datadog login-fastly
 
 login-codex:
     limactl shell "{{ vm }}" bash -lc 'codex login --device-auth'
+
+login-claude:
+    limactl shell "{{ vm }}" bash -lc 'claude auth login'
 
 login-datadog:
     cargo run --quiet -- login-datadog "{{ vm }}"
@@ -57,6 +60,7 @@ upgrade:
     limactl shell "{{ vm }}" sudo apt-get upgrade
     limactl shell "{{ vm }}" bash -lc 'brew update && brew upgrade --yes'
     limactl shell "{{ vm }}" bash -lc 'curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh'
+    limactl shell "{{ vm }}" bash -o pipefail -lc 'curl -fsSL https://claude.ai/install.sh | bash'
     # stop the old running app-server and start it again using the newly installed binary.
     limactl shell "{{ vm }}" bash -lc \
         'pkill -x codex || true; exec codex app-server daemon bootstrap'

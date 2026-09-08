@@ -16,7 +16,7 @@ ssh:
   forwardAgent: false
   loadDotSSHPubKeys: false
 
-# Codex can elevate to root inside the VM
+# Codex and Claude Code can elevate to root inside the VM
 # without receiving or storing the guest user's password.
 user:
   passwordlessSudo: true

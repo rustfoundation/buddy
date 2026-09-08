@@ -3,7 +3,8 @@ set -Eeuo pipefail
 
 apt-get update
 
-# Codex uses bubblewrap for its Linux sandbox. This is needed if you want to run codex withot full access.
+# Codex and Claude Code use bubblewrap for their Linux sandboxes.
+# Claude Code also uses socat to proxy sandbox network traffic.
 apt-get install -y \
   build-essential \
   bubblewrap \
@@ -20,6 +21,7 @@ apt-get install -y \
   python3-venv \
   ripgrep \
   rsync \
+  socat \
   unzip \
   zip
 

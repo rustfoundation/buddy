@@ -3,8 +3,9 @@
 > [!NOTE]
 > This project is meant for people working on the Rust Project infrastructure.
 
-Run codex in a Linux VM using [lima](https://lima-vm.io/).
-Control it from [ChatGPT desktop](https://chatgpt.com/download/).
+Run Codex and Claude Code in a Linux VM using [lima](https://lima-vm.io/).
+Use either CLI over SSH, or control Codex from
+[ChatGPT desktop](https://chatgpt.com/download/).
 
 The VM has read-only access to Cloud services like DataDog and Fastly.
 Credentials are read automatically from the Rust Foundation 1Password.
@@ -50,10 +51,10 @@ Credentials are read automatically from the Rust Foundation 1Password.
   you are experiencing issues, check the
   [authentication docs](./docs/authentication.md).
 
-- Enable "Device code authorization for Codex" in
+- If using Codex, enable "Device code authorization for Codex" in
   [ChatGPT security settings](https://chatgpt.com/#settings/Security).
 
-- Login to Codex, Datadog and Fastly from the guest:
+- Login to Codex, Claude Code, Datadog and Fastly from the guest:
 
   ```sh
   just login
@@ -86,7 +87,12 @@ Place your projects in the host directory:
   ssh lima-buddy
   ```
 
-- (Optional) Launch the `codex` command inside the VM to start the Codex TUI.
+- (Optional) Launch `codex` or `claude` inside the VM from your project directory:
+
+  ```sh
+  cd ~/work/<project>
+  codex
+  ```
 
 See the [Lima SSH documentation](https://lima-vm.io/docs/usage/ssh/) for more details.
 
@@ -134,14 +140,14 @@ for more details.
 
 The template explicitly sets `user.passwordlessSudo: true`, which is
 [Lima's default for Linux guests](https://lima-vm.io/docs/config/sudo/).
-This gives Codex unrestricted root access inside the guest, but does not grant
-root access on the host. The VM boundary and the resources exposed to the VM,
-such as the writable `$HOME/work` mount, remain the main security boundary.
+This gives Codex and Claude Code unrestricted root access inside the guest, but
+does not grant root access on the host. The VM boundary and the resources exposed
+to the VM, such as the writable `$HOME/work` mount, remain the main security boundary.
 
 Enabling passwordless sudo has this advantage:
 
-- Codex and other automation can install packages, update the guest, and fix
-  system configuration without waiting for a password prompt.
+- Codex, Claude Code, and other automation can install packages, update the guest,
+  and fix system configuration without waiting for a password prompt.
 
 It also has these disadvantages:
 
@@ -154,10 +160,10 @@ It also has these disadvantages:
 
 ## FAQ
 
-> Why not running Codex directly on the host?
+> Why not run AI agents directly on the host?
 
-Auditing all commands that codex wants to run is not productive. Instead, by
-running it in an isolated VM, you can run codex in yolo mode.
+Auditing all commands that AI agents want to run is not productive. Instead, by
+running them in an isolated VM, you can run them in yolo mode.
 
 > Why not using one VM per project?
 
@@ -174,10 +180,10 @@ Lima provides:
 - It's an open source [CNCF project](https://www.cncf.io/projects/lima/), while Docker Desktop is a proprietary product.
 - The Docker Desktop feature [Enhanced Container Isolation](https://docs.docker.com/enterprise/security/hardened-desktop/enhanced-container-isolation/), which "prevents malicious containers from compromising the host system" is restricted to Docker Business.
 
-> I don't want to run codex with full privileges, I think it is dangerous!
+> I don't want to run AI agents with full privileges, I think it is dangerous!
 
-Nobody forces you to run codex with full privileges. You can still run it in the
-`buddy` VM for improved security _and_ customize its permissions.
+Nobody forces you to run AI agents with full privileges. You can
+run them in the `buddy` VM for improved security _and_ customize their permissions.
 
 ## License
 
