@@ -5,6 +5,7 @@
 set default-list := true
 
 vm := "buddy"
+config_dir := "$HOME/.config/buddy"
 
 host:
     mkdir -p "{{ env('HOME') / 'buddy' }}"
@@ -25,6 +26,9 @@ restart: stop start
 delete: stop
     limactl delete --force "{{ vm }}"
 
+delete-file path:
+    limactl shell "{{ vm }}" bash -lc 'rm -f "{{ path }}"'
+
 login: login-codex login-datadog login-fastly
 
 login-codex:
@@ -32,6 +36,8 @@ login-codex:
 
 login-datadog:
     cargo run --quiet -- login-datadog "{{ vm }}"
+
+logout-datadog: (delete-file (config_dir / "datadog.env"))
 
 dump-datadog-permissions:
     cargo run --quiet -- datadog-permissions dump "{{ vm }}"
@@ -41,6 +47,8 @@ assert-datadog-credentials:
 
 login-fastly:
     cargo run --quiet -- login-fastly "{{ vm }}"
+
+logout-fastly: (delete-file (config_dir / "fastly.env"))
 
 # Upgrade manually. Upgrades are not done in `system.sh` because
 # a full upgrade would make startup slower, less predictable, and could install kernel updates requiring another reboot.
