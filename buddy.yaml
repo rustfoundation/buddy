@@ -13,6 +13,9 @@ base:
 propagateProxyEnv: false
 
 ssh:
+  # Some apps save the resolved port instead of re-reading ssh.config.
+  # Keep it stable across VM restarts and rebuilds.
+  localPort: 49335
   forwardAgent: false
   loadDotSSHPubKeys: false
 
