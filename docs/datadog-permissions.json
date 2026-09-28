@@ -118,6 +118,15 @@
       "restricted": false
     },
     {
+      "id": "92b11e72-9012-11f0-9b95-da7ad0900002",
+      "name": "dbm_read",
+      "display_name": "Database Monitoring Read",
+      "description": "View Database Monitoring data.",
+      "group_name": "Database Monitoring",
+      "name_aliases": [],
+      "restricted": false
+    },
+    {
       "id": "b6bf9ac6-9a59-11ec-8480-da7ad0900002",
       "name": "notebooks_read",
       "display_name": "Notebooks Read",
@@ -125,6 +134,15 @@
       "group_name": "Notebooks",
       "name_aliases": [],
       "restricted": true
+    },
+    {
+      "id": "ce89bd8e-00ce-11ef-8fcb-da7ad0900002",
+      "name": "network_path_config_read",
+      "display_name": "Network Path Data Read",
+      "description": "Read Network Path data.",
+      "group_name": "Network Path",
+      "name_aliases": [],
+      "restricted": false
     },
     {
       "id": "d90f6830-d3d8-11e9-a77a-b3404e5e9ee2",
