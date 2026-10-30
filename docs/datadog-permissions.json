@@ -5,7 +5,7 @@
       "name": "incident_read",
       "display_name": "Incidents Read",
       "description": "View incidents in Datadog.",
-      "group_name": "Case and Incident Management",
+      "group_name": "Work and Incident Management",
       "name_aliases": [],
       "restricted": true
     },
@@ -14,7 +14,7 @@
       "name": "incident_settings_read",
       "display_name": "Incident Settings Read",
       "description": "View Incident Settings.",
-      "group_name": "Case and Incident Management",
+      "group_name": "Work and Incident Management",
       "name_aliases": [],
       "restricted": false
     },
@@ -77,7 +77,7 @@
       "name": "incident_notification_settings_read",
       "display_name": "Incident Notification Settings Read",
       "description": "View Incidents Notification settings.",
-      "group_name": "Case and Incident Management",
+      "group_name": "Work and Incident Management",
       "name_aliases": [],
       "restricted": false
     },
